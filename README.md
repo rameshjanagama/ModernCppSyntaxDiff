@@ -5,6 +5,7 @@ Modern C++ - Syntax Difference
 <!-- md-cpp-begin -->
 # Table of Content
 * [SET INSERTION](#std-set)
+* [VECTOR FIND](#std-vector-find)
 * [SEE ALSO](#see-also)
   * [Syntax specification](#syntax-specification)
   * [Perl implementations](#perl-implementations)
@@ -27,6 +28,27 @@ std::tie(iter, inserted) = mySet.insert(55);
 ```
 std::set<int> mySet;
 auto [iter, inserted ] = mySet.insert(55);
+```
+# VECTOR FIND
+## Before C++17
+<!---code: --->
+
+```
+// Find and replace abc with $$$
+const auto it = find(begin(str), end(str), "abc");
+ 
+if (it != end(str)) {
+   *it = "$$$";
+}
+```
+## C++17
+<!---code: --->
+
+```
+if (const auto it =  find(begin(str), end(str), "abc");
+    it != end(str)) {
+    *it = "$$$";
+}
 ```
 
 # SEE ALSO
