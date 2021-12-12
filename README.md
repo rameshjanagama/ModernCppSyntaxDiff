@@ -4,16 +4,20 @@ Modern C++ - Syntax Difference
 
 <!-- md-cpp-begin -->
 # Table of Content
-* [SET INSERTION](#std-set)
-* [VECTOR FIND](#std-vector-find)
+* [SET](#std-set)
+  * [insertion](#std-set-insert)
+* [VECTOR](#std-vector)
+*   * [find](#std-vector-find)
 * [SEE ALSO](#see-also)
   * [Syntax specification](#syntax-specification)
   * [Perl implementations](#perl-implementations)
   * [Some other implementations](#some-other-implementations)
 <!-- md-cpp-end -->
 
-# SET INSERTION
-## C++11 
+# SET
+
+## insertion
+### Before C++17
 <!---code: --->
 
 ```
@@ -22,14 +26,15 @@ set::set<int>::iterator iter;
 bool inserted { false };
 std::tie(iter, inserted) = mySet.insert(55);
 ```
-## C++17
+### C++17
 <!---code: --->
 
 ```
 std::set<int> mySet;
 auto [iter, inserted ] = mySet.insert(55);
 ```
-# VECTOR FIND
+# VECTOR
+## find
 ## Before C++17
 <!---code: --->
 
