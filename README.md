@@ -1,11 +1,26 @@
 # Modern C+++ Syntax Diff
 Modern C++ -  Syntax Difference
 
-| Command | Description |
-| --- | --- |
-| C++3x | Hello C++3x |
-| C++11 | Hello C++11 |
-| C++14 | Hello C++14 |
-| C++17 | Hello C++17 |
-| C++20 | Hello C++20 |
-| C++23 | Hello C++23 |
+# Tuples or Pair 
+## C++11 
+###### C++11 
+code:
+
+```
+std::set<int> mySet;
+set::set<int>::iterator iter;
+bool inserted { false };
+std::tie(iter, inserted) = mySet.insert(55);
+```
+###### TC++17 
+## C++17
+###### TC++17
+code:
+
+```
+std::set<int> mySet;
+auto [iter, inserted ] = mySet.insert(55);
+```
+
+
+
