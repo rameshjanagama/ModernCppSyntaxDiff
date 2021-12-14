@@ -20,8 +20,6 @@ Modern C++ - Syntax Difference
 
 ## insertion
 ### Before C++17
-<!---code: --->
-
 ```
 std::set<int> mySet;
 set::set<int>::iterator iter;
@@ -29,17 +27,13 @@ bool inserted { false };
 std::tie(iter, inserted) = mySet.insert(55);
 ```
 ### C++17
-<!---code: --->
-
 ```
 std::set<int> mySet;
 auto [iter, inserted ] = mySet.insert(55);
 ```
 # VECTOR
 ## find
-## Before C++17
-<!---code: --->
-
+## before C++17
 ```
 // Find and replace abc with $$$
 const auto it = find(begin(str), end(str), "abc");
@@ -49,8 +43,6 @@ if (it != end(str)) {
 }
 ```
 ## C++17
-<!---code: --->
-
 ```
 if (const auto it =  find(begin(str), end(str), "abc");
     it != end(str)) {
@@ -59,10 +51,8 @@ if (const auto it =  find(begin(str), end(str), "abc");
 ```
 
 # MAP
-## Iterating
-## Before C++11
-<!---code: --->
-
+## iterating
+## before C++11
 ```
 map<string, int>::iterator it;
 
@@ -72,7 +62,6 @@ for (it = symbolTable.begin(); it != symbolTable.end(); it++)
 }
 ```
 ## C++11
-<!---code: --->
 
 ```
 for (auto const& x : symbolTable)
@@ -81,7 +70,6 @@ for (auto const& x : symbolTable)
 }
 ```
 ## C++17
-<!---code: --->
 
 ```
 for (auto const& [key, val] : symbolTable)
