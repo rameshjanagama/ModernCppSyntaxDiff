@@ -33,7 +33,7 @@ auto [iter, inserted ] = mySet.insert(55);
 
 # VECTOR
 
-## find
+## vector find
 
 **Before C++17**
 ```
