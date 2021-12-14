@@ -1,6 +1,8 @@
 # Modern C++ Syntax Diff
 
-Modern C++ - Syntax Difference
+Modern C++ - Syntax Difference between various standards of C++. 
+
+Note: please update new differences or correct if any mistakes.
 
 <!-- md-cpp-begin -->
 # Table of Content
