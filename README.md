@@ -6,10 +6,10 @@ Note: please update new differences or correct if any mistakes.
 
 <!-- md-cpp-begin -->
 # Table of Content
-* [SET](#std-set)
-  * [insertion](#std-set-insert)
-* [VECTOR](#std-vector)
-  * [find](#std-vector-find)
+* [SET](#set)
+  * [set insertion](#set-insertion)
+* [VECTOR](#vector)
+  * [vector find](#vector-find)
 * [MAP](#map)
   * [map iteration](#map-iterating)   
 * [SEE ALSO](#see-also)
