@@ -7,7 +7,9 @@ Modern C++ - Syntax Difference
 * [SET](#std-set)
   * [insertion](#std-set-insert)
 * [VECTOR](#std-vector)
-*   * [find](#std-vector-find)
+  * [find](#std-vector-find)
+* [MAP](#std-map)
+  * [loop](#std-map-loop)   
 * [SEE ALSO](#see-also)
   * [Syntax specification](#syntax-specification)
   * [Perl implementations](#perl-implementations)
@@ -53,6 +55,38 @@ if (it != end(str)) {
 if (const auto it =  find(begin(str), end(str), "abc");
     it != end(str)) {
     *it = "$$$";
+}
+```
+
+# MAP
+## Iterating
+## Before C++11
+<!---code: --->
+
+```
+map<string, int>::iterator it;
+
+for (it = symbolTable.begin(); it != symbolTable.end(); it++)
+{
+    std::cout << it->first << ':' << it->second << std::endl;
+}
+```
+## C++11
+<!---code: --->
+
+```
+for (auto const& x : symbolTable)
+{
+    std::cout << x.first << ':' << x.second << std::endl;
+}
+```
+## C++17
+<!---code: --->
+
+```
+for (auto const& [key, val] : symbolTable)
+{
+    std::cout << key << ':' << val << std::endl;
 }
 ```
 
