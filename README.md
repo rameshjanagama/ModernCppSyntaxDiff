@@ -9,7 +9,7 @@ Modern C++ - Syntax Difference
 * [VECTOR](#std-vector)
   * [find](#std-vector-find)
 * [MAP](#std-map)
-  * [loop](#std-map-loop)   
+  * [iterating](#std-map-iterating)   
 * [SEE ALSO](#see-also)
   * [Syntax specification](#syntax-specification)
   * [Perl implementations](#perl-implementations)
