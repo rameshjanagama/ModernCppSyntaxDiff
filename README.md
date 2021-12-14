@@ -16,7 +16,7 @@ Note: please update new differences or correct if any mistakes.
 
 # SET
 
-## insertion
+## set insertion
 
 **Before C++17**
 ```
