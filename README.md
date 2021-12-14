@@ -10,8 +10,8 @@ Note: please update new differences or correct if any mistakes.
   * [insertion](#std-set-insert)
 * [VECTOR](#std-vector)
   * [find](#std-vector-find)
-* [MAP](#std-map)
-  * [iterating](#std-map-iterating)   
+* [MAP](#map)
+  * [map iteration](#map-iterating)   
 * [SEE ALSO](#see-also)
   * [Syntax specification](#syntax-specification)
   * [Perl implementations](#perl-implementations)
@@ -53,7 +53,7 @@ if (const auto it =  find(begin(str), end(str), "abc");
 ```
 
 # MAP
-## iterating
+## map iteration
 ## before C++11
 ```
 map<string, int>::iterator it;
