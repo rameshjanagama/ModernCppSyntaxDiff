@@ -12,10 +12,6 @@ Note: please update new differences or correct if any mistakes.
   * [vector find](#vector-find)
 * [MAP](#map)
   * [map iteration](#map-iterating)   
-* [SEE ALSO](#see-also)
-  * [Syntax specification](#syntax-specification)
-  * [Perl implementations](#perl-implementations)
-  * [Some other implementations](#some-other-implementations)
 <!-- md-cpp-end -->
 
 # SET
@@ -59,7 +55,7 @@ if (const auto it =  find(begin(str), end(str), "abc");
 
 ## map iteration
 
-## before C++11
+before C++11
 ```
 map<string, int>::iterator it;
 
@@ -68,7 +64,7 @@ for (it = symbolTable.begin(); it != symbolTable.end(); it++)
     std::cout << it->first << ':' << it->second << std::endl;
 }
 ```
-## C++11
+C++11
 
 ```
 for (auto const& x : symbolTable)
@@ -76,7 +72,7 @@ for (auto const& x : symbolTable)
     std::cout << x.first << ':' << x.second << std::endl;
 }
 ```
-## C++17
+C++17
 
 ```
 for (auto const& [key, val] : symbolTable)
