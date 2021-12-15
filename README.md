@@ -60,7 +60,7 @@ if (const auto it =  find(begin(str), end(str), "abc");
 ```
 map<string, int>::iterator it;
 
-for (it = symbolTable.begin(); it != symbolTable.end(); it++)
+for (it = myMap.begin(); it != myMap.end(); it++)
 {
     std::cout << it->first << ':' << it->second << std::endl;
 }
@@ -68,7 +68,7 @@ for (it = symbolTable.begin(); it != symbolTable.end(); it++)
 **C++11**
 
 ```
-for (auto const& x : symbolTable)
+for (auto const& x : myMap)
 {
     std::cout << x.first << ':' << x.second << std::endl;
 }
@@ -76,7 +76,7 @@ for (auto const& x : symbolTable)
 **C++17**
 
 ```
-for (auto const& [key, val] : symbolTable)
+for (auto const& [key, val] : myMap)
 {
     std::cout << key << ':' << val << std::endl;
 }
