@@ -11,7 +11,9 @@ Note: please update new differences or correct if any mistakes.
 * [VECTOR](#vector)
   * [vector find](#vector-find)
 * [MAP](#map)
-  * [map iteration](#map-iteration)   
+  * [map iteration](#map-iteration)
+* [BIND to LAMDA](#bind)
+  * [bind to lambda](#bind-lamda)     
 <!-- md-cpp-end -->
 
 # SET
@@ -80,4 +82,60 @@ for (auto const& [key, val] : myMap)
 {
     std::cout << key << ':' << val << std::endl;
 }
+```
+
+# BIND
+
+## bind-lamda
+
+
+**C++11**
+std::bind
+```
+struct foo
+{
+  typedef void result_type;
+
+  template < typename A, typename B >
+  void operator()(A a, B b)
+  {
+    cout << a << ' ' << b;
+  }
+};
+
+auto f = bind(foo(), _1, _2);
+f( "test", 1.2f ); // will print "test 1.2"
+```
+1. You can't move the variables while capturing when creating the lambdas. Variables are always captured as lvalues. For bind you can write:
+
+```
+auto f1 = std::bind(f, 42, _1, std::move(v));
+```
+2. Expressions can't be captured, only identifiers can. For bind you can write:
+
+```
+auto f1 = std::bind(f, 42, _1, a + b);
+```
+
+3. Overloading arguments for function objects. 
+4. Impossible to perfect-forward arguments
+
+**C++14**
+lambda
+```
+auto f = []( auto a, auto b ){ cout << a << ' ' << b; }
+f( "test", 1.2f ); // will print "test 1.2"
+```
+
+1.Move example:
+```
+auto f1 = [v = std::move(v)](auto arg) { f(42, arg, std::move(v)); };
+```
+2. Expression example:
+```
+auto f1 = [sum = a + b](auto arg) { f(42, arg, sum); };
+```
+4. Perfect forwarding: You can write
+```
+auto f1 = [=](auto&& arg) { f(42, std::forward<decltype(arg)>(arg)); };
 ```
