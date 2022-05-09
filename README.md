@@ -12,6 +12,8 @@ Note: please update new differences or correct if any mistakes.
   * [vector find](#vector-find)
 * [MAP](#map)
   * [map iteration](#map-iteration)
+* [LAMDA]
+  * [lamda-notes](#lamda-notes)
 * [BIND to LAMDA](#bind)
   * [bind to lambda](#bind-lamda)     
 <!-- md-cpp-end -->
@@ -83,6 +85,17 @@ for (auto const& [key, val] : myMap)
     std::cout << key << ':' << val << std::endl;
 }
 ```
+# LAMDA
+
+## lamda-notes
+1. What you can’t do prior to C++11 is to create small function on the fly which can use variables from the containing scope and pass it as parameter to another function. 
+2. C++11 lamda expression enables you to create functions without name and with data binding, store it, create copy of it, pass as parameter to a function and return from a function. All this property makes lamda as first class function or closer.
+
+**C++11**
+**C++14**
+**C++17**
+**C++20**
+**C++23**
 
 # BIND
 
