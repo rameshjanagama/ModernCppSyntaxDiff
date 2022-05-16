@@ -15,7 +15,9 @@ Note: please update new differences or correct if any mistakes.
 * [LAMDA]
   * [lamda-notes](#lamda-notes)
 * [BIND to LAMDA](#bind)
-  * [bind to lambda](#bind-lamda)     
+  * [bind to lambda](#bind-lamda)   
+* [Template MetaProgamming](#tmp)
+  * [type_traits](#type-traits)      
 <!-- md-cpp-end -->
 
 # SET
@@ -151,4 +153,9 @@ auto f1 = [sum = a + b](auto arg) { f(42, arg, sum); };
 4. Perfect forwarding: You can write
 ```
 auto f1 = [=](auto&& arg) { f(42, std::forward<decltype(arg)>(arg)); };
+
+# TMP
+
+## type-traits
+
 ```
