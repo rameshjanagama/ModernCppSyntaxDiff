@@ -190,6 +190,23 @@ template<typename T,
 void foo() {
 }
 
+Concepts:
+template<typename STR>
+requires std::is_convertible_v<STR,std::string>
+Person(STR&& n) : name(std::forward<STR>(n)) {
+    …
+}
+
+OR 
+template<typename T>
+concept ConvertibleToString = std::is_convertible_v<T,std::string>;
+
+template<typename STR>
+requires ConvertibleToString<STR>
+Person(STR&& n) : name(std::forward<STR>(n)) {
+    …
+}
+
 
 
 ```
