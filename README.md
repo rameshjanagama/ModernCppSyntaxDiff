@@ -18,6 +18,8 @@ Note: please update new differences or correct if any mistakes.
   * [bind to lambda](#bind-lamda)   
 * [Template MetaProgamming](#tmp)
   * [type_traits](#type-traits)      
+* [Concepts](#concepts)
+  * [C++20](#Concepts2)   
 <!-- md-cpp-end -->
 
 # SET
@@ -153,6 +155,7 @@ auto f1 = [sum = a + b](auto arg) { f(42, arg, sum); };
 4. Perfect forwarding: You can write
 ```
 auto f1 = [=](auto&& arg) { f(42, std::forward<decltype(arg)>(arg)); };
+```
 
 # TMP
 
@@ -161,27 +164,30 @@ auto f1 = [=](auto&& arg) { f(42, std::forward<decltype(arg)>(arg)); };
 ## different syntaxes of enable_if
 
 C++11:
+```
 template<typename T>
 typename std::enable_if<(sizeof(T) > 4)>::type
 foo() {
 }
+```
 
 C++14: removed type and typename 
-
+```
 template<typename T>
 std::enable_if_t<(sizeof(T) > 4)>
 foo() {
 }
+```
 
 OR as last argument of template
-
+```
 template<typename T,
          typename = std::enable_if_t<(sizeof(T) > 4)>>
 void foo() {
 }
-
+```
 OR using template aliase(note separate template for alias)
-
+```
 template<typename T>
 using EnableIfSizeGreater4 = std::enable_if_t<(sizeof(T) > 4)>;
 
@@ -189,15 +195,21 @@ template<typename T,
          typename = EnableIfSizeGreater4<T>>
 void foo() {
 }
+```
 
-Concepts:
+# concepts
+
+## Concepts2
+
+```
 template<typename STR>
 requires std::is_convertible_v<STR,std::string>
 Person(STR&& n) : name(std::forward<STR>(n)) {
     …
 }
-
+```
 OR 
+```
 template<typename T>
 concept ConvertibleToString = std::is_convertible_v<T,std::string>;
 
@@ -206,6 +218,7 @@ requires ConvertibleToString<STR>
 Person(STR&& n) : name(std::forward<STR>(n)) {
     …
 }
+```
 
 
 
